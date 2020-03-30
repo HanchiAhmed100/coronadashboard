@@ -1,7 +1,6 @@
 <template>
   <div id="app">
     <div>
-      Selem Chayma <br />
       <word></word>
     </div>
   </div>
