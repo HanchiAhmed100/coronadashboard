@@ -1,16 +1,14 @@
 <template>
     <div>
-        <div class="row">
-            <div class="col-12">
-                <tunisiamap></tunisiamap>
-                <maps></maps>
-                <LandingChart></LandingChart>
-                <Tunisia></Tunisia>
-                <radrs></radrs>
-                <all></all>
-            </div>
-        </div>
+        <headcomponent></headcomponent>
+        <tunisiamap></tunisiamap>
+        <maps></maps>
+        <LandingChart></LandingChart>
+        <Tunisia></Tunisia>
+        <radrs></radrs>
+        <all></all>    
     </div>    
+    
 </template>
 
 <script>
@@ -21,6 +19,8 @@ import radrs from './radrs.vue'
 import all from './all.vue'
 import maps from './maps.vue'
 import tunisiamap from './tunisiamap.vue'
+import headcomponent from './headcomponent.vue'
+
 export default {
     name : 'Dashboard',
     components : {
@@ -29,20 +29,23 @@ export default {
         radrs,
         all,
         maps,
-        tunisiamap
+        tunisiamap,
+        headcomponent
     },
     data () {
         return {
-            
+            worldstats : []
         }
     },
-    mounted(){
-
-    }
-
 }
 </script>
 
 <style>
+    .mycolor{
+        color : #880e4f
+    }
+    .mybackground {
+        background:#c2185b
 
+    }
 </style>

@@ -1,35 +1,25 @@
 <template>
   <div id="app">
     <div>
-      <word></word>
+      <Dashboard></Dashboard>
     </div>
   </div>
 </template>
 
 <script>
-import word from './components/word.vue'
+import Dashboard from './components/Dashboard.vue'
 
 export default {
   name: 'app',
   components: {
-    word
+    Dashboard
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+body{
+  background-color:#f8f8f8
 }
-div{
-  font-size : 50px;
-}
-p{
-  font-size : 20px;
-}
+
 </style>

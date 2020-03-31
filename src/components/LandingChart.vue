@@ -54,11 +54,6 @@ export default {
         })
     
     
-
-    
-    
-
-    
     
     let labels = []
     let data = []    
@@ -75,9 +70,6 @@ export default {
 
     labels.push("deaths")
     data.push(this.deaths)
-
-
-   
 
         
     new Chart(document.getElementById('my-chart'), {
