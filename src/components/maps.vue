@@ -1,9 +1,6 @@
 <template>
-    <div class="vue-world-map">
-        <v-zoomer >
+    <div class="vue-world-map">        
             <MapChart showLegend="true" v-bind:countryData="this.mydata" v-bind:defaultCountryFillColor="map.defaultCountryFillColor" v-bind:highColor='map.highColor' v-bind:countryStrokeColor='map.countryStrokeColor' v-bind:lowColor="map.lowColor"></MapChart>
-        </v-zoomer>
-
     </div>
 </template>
 
