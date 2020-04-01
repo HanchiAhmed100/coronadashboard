@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import App from './App.vue'
 import VueZoomer from 'vue-zoomer'
-import store from './store'
 
 import 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -13,6 +12,5 @@ Vue.use(VueZoomer)
 Vue.config.productionTip = false
 
 new Vue({
-  store,
   render: h => h(App),
 }).$mount('#app')

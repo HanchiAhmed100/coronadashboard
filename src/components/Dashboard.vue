@@ -18,7 +18,6 @@ import Tunisia from './Tunisia.vue'
 import radrs from './radrs.vue'
 import all from './all.vue'
 import maps from './maps.vue'
-import tunisiamap from './tunisiamap.vue'
 import headcomponent from './headcomponent.vue'
 
 export default {
@@ -29,7 +28,6 @@ export default {
         radrs,
         all,
         maps,
-        tunisiamap,
         headcomponent
     },
     data () {

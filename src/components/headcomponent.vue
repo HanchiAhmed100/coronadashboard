@@ -11,7 +11,7 @@
                         <h3 class="uk-card-title">Cas</h3>
                         
                         <Progress :radius="50" :strokeWidth="10"  strokeColor="#FF00AA" :value="100">
-                            <div class="content">{{allstats.cases}}</div>
+                            <div class="content">{{mystats.cases}}</div>
                             <template v-slot:footer>
                                 <b>Personne</b>
                             </template>
@@ -23,7 +23,7 @@
                     <div class="uk-card  uk-margin uk-card-default uk-card-body uk-width-1-1@m">
                         <h3 class="uk-card-title">Cas Active</h3>
                         <Progress :radius="50" :strokeWidth="10"  strokeColor="#FF00AA" :value="p_active">
-                            <div class="content">{{allstats.active}}</div>
+                            <div class="content">{{mystats.active}}</div>
                             <template v-slot:footer>
                                 <b>Personne</b>
                             </template>
@@ -34,7 +34,7 @@
                     <div class="uk-card uk-margin uk-card-default uk-card-body uk-width-1-1@m">
                         <h3 class="uk-card-title">Morts</h3>
                         <Progress :radius="50" :strokeWidth="10"  strokeColor="#FF00AA" :value="p_morts">
-                            <div class="content">{{allstats.deaths}}</div>
+                            <div class="content">{{mystats.deaths}}</div>
                             <template v-slot:footer>
                                 <b>Personne</b>
                             </template>
@@ -45,7 +45,7 @@
                     <div class="uk-card uk-card-default uk-card-body uk-width-1-1@m">
                         <h3 class="uk-card-title">Retablie</h3>
                         <Progress :radius="50" :strokeWidth="10"  strokeColor="#FF00AA" :value="p_retablie">
-                            <div class="content">{{allstats.recovered}}</div>
+                            <div class="content">{{mystats.recovered}}</div>
                             <template v-slot:footer>
                                 <b>Personne</b>
                             </template>
@@ -59,8 +59,7 @@
 
 <script>
 import Progress from "easy-circular-progress";
-
-import { mapGetters , mapActions } from 'vuex'
+import service from '../service/service.js'
 
 export default {
     name : 'headcomponent',    
@@ -70,18 +69,19 @@ export default {
     
     data () {
         return {    
-            mystats : []
+            mystats : [],
+            p_active : '',
+            p_morts : '',
+            p_retablie : ''
+
+            
         }
     },
-    computed : {
-        ...mapGetters(['allstats','p_active','p_morts','p_retablie']),   
-    },
-    methods : {
-        ...mapActions(['fetchworldstats','set_p_active','set_p_morts','set_p_retablie'])
-    },
-    
-    created(){
-        this.fetchworldstats()
+    async mounted(){
+        this.mystats = await service.Get_World_Stat()
+        this.p_active = this.mystats.cases / this.mystats.active
+        this.p_morts = this.mystats.deaths / this.mystats.active
+        this.p_retablie =  this.mystats.recovered / this.mystats.active
     }
 
 }
