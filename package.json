@@ -13,7 +13,7 @@
     "apexcharts": "^3.17.1",
     "axios": "^0.19.2",
     "bootstrap": "^4.4.1",
-    "chart.js": "^2.9.3",
+    "chart.js": "^2.9.4",
     "core-js": "^3.4.4",
     "easy-circular-progress": "^1.0.4",
     "jquery": "^3.4.1",
